@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index",
-    "dev": "nodemon index"
+    "dev": "node src/database/setup.js && nodemon index"
   },
   "keywords": [],
   "author": "Laura Nunes",
