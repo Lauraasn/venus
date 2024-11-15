@@ -1,8 +1,13 @@
 const express = require("express");
 const app = express();
 
-app.get("/", function (req, res) {
-  res.send("Hello World");
-});
+const route = require("./src/routes/main.route");
 
-app.listen(3000);
+app.use(express.json());
+app.use(express.static("public"));
+
+app.use("/", route);
+
+const port = 3000;
+
+app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
