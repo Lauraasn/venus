@@ -17,16 +17,17 @@ const paginaLogin = (req, res) => {
   res.sendFile(path.join(__dirname, "../../public/html/login.html"));
 };
 
+const paginaPrincipal = (req, res) => {
+  res.sendFile(path.join(__dirname, "../../public/html/home.html"));
+};
+
 const fazCadastro = async (req, res) => {
   const { email, senha } = req.body;
 
   try {
     const user = await cadastraProfissional(email, senha);
 
-    res.status(201).json({
-      message: "Profissional cadastrado com sucesso!",
-      user,
-    });
+    res.redirect("/home");
   } catch (err) {
     console.error("Erro ao cadastrar profissional:", err);
     res.status(500).json({ message: "Erro no servidor." });
@@ -49,10 +50,7 @@ const fazLogin = async (req, res) => {
       return res.status(401).json({ message: "Senha incorreta" });
     }
 
-    res.status(201).json({
-      message: "Profissional logado com sucesso!",
-      user: { id: profissional.id, email: profissional.email },
-    });
+    res.redirect("/home");
   } catch (err) {
     console.error("Erro ao logar profissional:", err);
     res.status(500).json({ message: "Erro no servidor." });
@@ -63,6 +61,7 @@ module.exports = {
   helloWorld,
   paginaCadastro,
   paginaLogin,
+  paginaPrincipal,
   fazCadastro,
   fazLogin,
 };
