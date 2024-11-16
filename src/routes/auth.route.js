@@ -1,8 +1,8 @@
 const { fazCadastro, fazLogin } = require("../controllers/main.controller");
 const express = require("express");
-const router = express.Router();
+const route = express.Router();
 
-router.post("/cadastro", fazCadastro);
-router.post("/login", fazLogin);
+route.post("/cadastro", fazCadastro);
+route.post("/login", fazLogin);
 
-module.exports = router;
+module.exports = route;

@@ -1,11 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vênus</title>
+    <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
-    <h1>Página Principal</h1>
+    <header>
+        <nav>
+            <a href="/">Vênus</a>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Prontuário</a></li>
+                <li><a href="#">Dashboard</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Página Principal</h1>
+        <div id="alert" class="hidden">Paciente atualizado ou adicionado com sucesso!</div>
+        <button id="toggleFormButton">Adicionar paciente</button>
+        <form id="pacienteForm" class="hidden">
+            <input type="text" name="nome" id="nome" placeholder="Nome" />
+            <input type="number" name="idade" id="idade" placeholder="Idade" />
+            <input type="text" name="sexo" id="sexo" placeholder="Sexo" />
+            <input type="text" name="diagnostico" id="diagnostico" placeholder="Diagnóstico" />
+            <input type="text" name="observacao" id="observacao" placeholder="Observação" />
+            <button type="submit" id="submitButton">Enviar</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nome</th>
+                    <th>Idade</th>
+                    <th>Sexo</th>
+                    <th>Diagnóstico</th>
+                    <th>Observações</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody id="pacienteTableBody"></tbody>
+        </table>
+    </main>
+    <script src="../js/home.js"></script>
 </body>
 </html>
