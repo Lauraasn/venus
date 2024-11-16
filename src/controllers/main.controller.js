@@ -1,17 +1,20 @@
 const path = require("path");
 const bcrypt = require("bcrypt");
-const { cadastraProfissional, buscaProfissional } = require("../models/profissional.model");
+const {
+  cadastraProfissional,
+  buscaProfissional,
+} = require("../models/profissional.model");
 
 const helloWorld = (req, res) => {
   res.send("Hello World");
 };
 
 const paginaCadastro = (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/cadastro.html"));
+  res.sendFile(path.join(__dirname, "../../public/html/cadastro.html"));
 };
 
 const paginaLogin = (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/login.html"));
+  res.sendFile(path.join(__dirname, "../../public/html/login.html"));
 };
 
 const fazCadastro = async (req, res) => {
@@ -54,6 +57,12 @@ const fazLogin = async (req, res) => {
     console.error("Erro ao logar profissional:", err);
     res.status(500).json({ message: "Erro no servidor." });
   }
-}
+};
 
-module.exports = { helloWorld, paginaCadastro, paginaLogin, fazCadastro, fazLogin };
+module.exports = {
+  helloWorld,
+  paginaCadastro,
+  paginaLogin,
+  fazCadastro,
+  fazLogin,
+};
