@@ -3,11 +3,14 @@ const app = express();
 const db = require("./src/database/db");
 
 const route = require("./src/routes/main.route");
+const authRoute = require("./src/routes/auth.route");
 
 app.use(express.json());
 app.use(express.static("public"));
+app.use(express.urlencoded({ extended: true }));
 
 app.use("/", route);
+app.use("/auth", authRoute);
 
 db.query("SELECT NOW()", (err, res) => {
   if (err) {
@@ -17,5 +20,5 @@ db.query("SELECT NOW()", (err, res) => {
   }
 });
 
-const port = 3000;
-app.listen(port, () => console.log(`Servidor rodando na porta ${port}`));
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => console.log(`Servidor rodando na porta ${PORT}`));
