@@ -101,7 +101,7 @@ const editPaciente = (id) => {
 
 const deletePaciente = async (id) => {
   try {
-    await fetch(`/paciente/${id}`, { method: "DELETE" });
+    await fetch(`/paciente/delete/${id}`, { method: "DELETE" });
     fetchData();
   } catch (error) {
     console.error("Erro ao deletar paciente:", error);

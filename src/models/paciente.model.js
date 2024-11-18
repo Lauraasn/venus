@@ -66,9 +66,22 @@ const updatePaciente = async (
   return result.rows[0];
 };
 
+const deletePaciente = async (id) => {
+    const query = `
+        DELETE FROM paciente
+        WHERE id = $1;
+    `;
+
+    const values = [id];
+    const result = await pool.query(query, values);
+
+    return result.rowCount;
+}
+
 module.exports = {
   cadastraPaciente,
   buscaTodosPacientes,
   buscaPaciente,
   updatePaciente,
+  deletePaciente,
 };

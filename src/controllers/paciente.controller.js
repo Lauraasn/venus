@@ -3,6 +3,7 @@ const {
   buscaTodosPacientes,
   buscaPaciente,
   updatePaciente,
+  deletePaciente,
 } = require("../models/paciente.model");
 
 const criaPaciente = async (req, res, next) => {
@@ -95,9 +96,30 @@ const atualizaPaciente = async (req, res, next) => {
   }
 };
 
+const deletaPaciente = async (req, res, next) => {
+  try {
+    const { id } = req.params;
+
+    if (!id) {
+      return res.status(400).json({ message: "ID do paciente é obrigatório." });
+    }
+
+    const paciente = await deletePaciente(id);
+
+    res.status(200).json({
+      message: "Paciente deletado com sucesso.",
+      data: paciente,
+    });
+  } catch (error) {
+    console.error("Erro ao deletar paciente:", error);
+    next(error);
+  }
+};
+
 module.exports = {
   criaPaciente,
   retornaTodosPacientes,
   retornaPaciente,
   atualizaPaciente,
+  deletaPaciente,
 };
