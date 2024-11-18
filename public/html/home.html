@@ -4,6 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vênus</title>
+    <style>
+        body {
+            visibility: hidden;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+        }
+    </style>
     <link rel="stylesheet" href="../css/home.css">
 </head>
 <body>
@@ -21,7 +28,7 @@
         <h1>Página Principal</h1>
         <div id="alert" class="hidden">Paciente atualizado ou adicionado com sucesso!</div>
         <button id="toggleFormButton">Adicionar paciente</button>
-        <form id="pacienteForm" class="hidden">
+        <form id="pacienteForm" class="hidden" action="/paciente/create" method="POST">
             <input type="text" name="nome" id="nome" placeholder="Nome" />
             <input type="number" name="idade" id="idade" placeholder="Idade" />
             <input type="text" name="sexo" id="sexo" placeholder="Sexo" />

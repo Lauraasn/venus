@@ -1,3 +1,7 @@
+document.addEventListener("DOMContentLoaded", () => {
+  document.body.classList.add("loaded");
+});
+
 const form = document.getElementById("pacienteForm");
 const toggleFormButton = document.getElementById("toggleFormButton");
 const alertDiv = document.getElementById("alert");
@@ -8,9 +12,9 @@ let currentEditId = null;
 
 const fetchData = async () => {
   try {
-    const response = await fetch("/create");
-    const data = await response.json();
-    populateTable(data);
+    const response = await fetch("/paciente/read");
+    const responseData = await response.json();
+    populateTable(responseData.data);
   } catch (error) {
     console.error("Erro ao coletar dados:", error);
   }
@@ -20,6 +24,7 @@ const populateTable = (data) => {
   tableBody.innerHTML = "";
   data.forEach((item) => {
     const row = document.createElement("tr");
+    row.setAttribute("data-id", item.id);
     row.innerHTML = `
             <td>${item.nome}</td>
             <td>${item.idade}</td>
@@ -57,7 +62,7 @@ const handleSubmit = async (e) => {
 
   try {
     const method = editMode ? "PUT" : "POST";
-    const url = editMode ? `/create/${currentEditId}` : "/create";
+    const url = editMode ? `/create/${currentEditId}` : "/paciente/create";
 
     const response = await fetch(url, {
       method,
