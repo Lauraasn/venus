@@ -62,7 +62,7 @@ const handleSubmit = async (e) => {
 
   try {
     const method = editMode ? "PUT" : "POST";
-    const url = editMode ? `/create/${currentEditId}` : "/paciente/create";
+    const url = editMode ? `/paciente/update/${currentEditId}` : "/paciente/create";
 
     const response = await fetch(url, {
       method,
