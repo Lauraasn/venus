@@ -1,4 +1,7 @@
-const { fazCadastro, fazLogin } = require("../controllers/main.controller");
+const {
+  fazCadastro,
+  fazLogin,
+} = require("../controllers/profissional.controller");
 const express = require("express");
 const route = express.Router();
 

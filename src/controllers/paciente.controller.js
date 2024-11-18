@@ -1,4 +1,9 @@
-const pool = require("../database/db");
+const {
+  cadastraPaciente,
+  buscaTodosPacientes,
+  buscaPaciente,
+  updatePaciente,
+} = require("../models/paciente.model");
 
 const criaPaciente = async (req, res, next) => {
   try {
@@ -10,18 +15,17 @@ const criaPaciente = async (req, res, next) => {
         .json({ message: "Campos obrigatórios não foram preenchidos." });
     }
 
-    const query = `
-            INSERT INTO paciente (nome, idade, sexo, diagnostico, observacao)
-            VALUES ($1, $2, $3, $4, $5)
-            RETURNING *;
-        `;
-    const values = [nome, idade, sexo, diagnostico, observacao];
-
-    const result = await pool.query(query, values);
+    const paciente = await cadastraPaciente(
+      nome,
+      idade,
+      sexo,
+      diagnostico,
+      observacao
+    );
 
     res.status(201).json({
       message: "Paciente criado com sucesso.",
-      data: result.rows[0],
+      data: paciente,
     });
   } catch (error) {
     console.error("Erro ao criar paciente:", error);
@@ -29,17 +33,13 @@ const criaPaciente = async (req, res, next) => {
   }
 };
 
-const retornaPacientes = async (req, res, next) => {
+const retornaTodosPacientes = async (req, res, next) => {
   try {
-    const query = `
-            SELECT * FROM paciente;
-        `;
-
-    const result = await pool.query(query);
+    const pacientes = await buscaTodosPacientes();
 
     res.status(200).json({
       message: "Pacientes retornados com sucesso.",
-      data: result.rows,
+      data: pacientes,
     });
   } catch (error) {
     console.error("Erro ao buscar pacientes:", error);
@@ -47,27 +47,19 @@ const retornaPacientes = async (req, res, next) => {
   }
 };
 
-const buscaPaciente = async (req, res, next) => {
+const retornaPaciente = async (req, res, next) => {
   try {
-    const { id } = req.body;
+    const { id } = req.params;
 
     if (!id) {
-      return res.status(400).json({ message: "ID do paciente é obrigatório."});
-    };
-
-    const query = `
-            SELECT * FROM paciente WHERE id= $1;
-        `;
-
-    const result = await pool.query(query, [id]);
-
-    if(result.rows.length === 0) {
-      return res.status(401).json({ message: "Paciente não encontrado"});
+      return res.status(400).json({ message: "ID do paciente é obrigatório." });
     }
+
+    const paciente = await buscaPaciente(id);
 
     res.status(200).json({
       message: "Paciente encontrado com sucesso.",
-      data: result.rows[0],
+      data: paciente,
     });
   } catch (error) {
     console.error("Erro ao buscar paciente:", error);
@@ -84,28 +76,18 @@ const atualizaPaciente = async (req, res, next) => {
       return res.status(400).json({ message: "ID do paciente é obrigatório." });
     }
 
-    const query = `
-      UPDATE paciente
-      SET 
-        nome = COALESCE($2, nome),
-        idade = COALESCE($3, idade),
-        sexo = COALESCE($4, sexo),
-        diagnostico = COALESCE($5, diagnostico),
-        observacao = COALESCE($6, observacao)
-      WHERE id = $1
-      RETURNING *;
-    `;
-
-    const values = [id, nome, idade, sexo, diagnostico, observacao];
-    const result = await pool.query(query, values);
-
-    if (result.rows.length === 0) {
-      return res.status(404).json({ message: "Paciente não encontrado." });
-    }
+    const paciente = await updatePaciente(
+      id,
+      nome,
+      idade,
+      sexo,
+      diagnostico,
+      observacao
+    );
 
     res.status(200).json({
       message: "Paciente atualizado com sucesso.",
-      data: result.rows[0],
+      data: paciente,
     });
   } catch (error) {
     console.error("Erro ao atualizar paciente:", error);
@@ -113,5 +95,9 @@ const atualizaPaciente = async (req, res, next) => {
   }
 };
 
-
-module.exports = { criaPaciente, retornaPacientes, buscaPaciente, atualizaPaciente };
+module.exports = {
+  criaPaciente,
+  retornaTodosPacientes,
+  retornaPaciente,
+  atualizaPaciente,
+};
