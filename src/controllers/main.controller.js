@@ -16,9 +16,14 @@ const paginaPrincipal = (req, res) => {
   res.sendFile(path.join(__dirname, "../../public/html/home.html"));
 };
 
+const paginaProntuario = (req, res) => {
+  res.sendFile(path.join(__dirname, "../../public/html/prontuário.html"));
+};
+
 module.exports = {
   helloWorld,
   paginaCadastro,
   paginaLogin,
   paginaPrincipal,
+  paginaProntuario,
 };

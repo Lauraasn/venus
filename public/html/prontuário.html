@@ -1,0 +1,2424 @@
+<!DOCTYPE html>
+<html lang="pt">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vênus</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  </head>
+  <body>
+    <div class="m-3">
+      <h1>Prontuário</h1>
+      <div class="accordion" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseOne"
+              aria-expanded="true"
+              aria-controls="collapseOne"
+            >
+              Anamnese Geral
+            </button>
+          </h2>
+          <div
+            id="collapseOne"
+            class="accordion-collapse collapse show"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <form class="mb-3" onsubmit="handleSubmit(event)">
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Dados Pessoais Básicos</legend>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-8">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="nome"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Nome</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="idade"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Idade</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="sexo"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Sexo</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="diagnostico"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Diagnóstico</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="observacao"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Observação</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Endereço</legend>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-6">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="rua"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Rua</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="number"
+                          name="numero"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Número</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="bairro"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Bairro</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="cidade"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Cidade</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="estado"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Estado</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="obsEndereco"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Observação sobre Endereço</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Informação adicional</legend>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="tel"
+                          name="telefone"
+                          value=""
+                          onchange="handleInputChange(event)"
+                          placeholder="(00) 00000-0000"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Telefone</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="dataNasc"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Data de Nascimento</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="naturalidade"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Naturalidade</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-sm-8">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="profissao"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Profissão</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-sm-4">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="estadoCivil"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Estado Civil</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="indicacao"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Indicação</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="encaminhamento"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Encaminhamento</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Dados de Emergência</legend>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="cttEmergencia"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Contato de Emergência</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="tel"
+                          name="telCtt"
+                          value=""
+                          onchange="handleInputChange(event)"
+                          placeholder="(00) 00000-0000"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Telefone do Contato</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="medico"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Médico</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="tel"
+                          name="telMed"
+                          value=""
+                          onchange="handleInputChange(event)"
+                          placeholder="(00) 00000-0000"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Telefone do Médico</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="convenio"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Convênio</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="cartConv"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Cartão do Convênio</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          name="hospital"
+                          value=""
+                          onchange="handleInputChange(event)"
+                        />
+                        <label class="form-label" style="color: #707b91"
+                          >Hospital</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Histórico Clínico</legend>
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="antecedenteCirurgico" class="form-label"
+                          >Antecedente Cirúrgico? Se sim, qual?</label
+                        >
+                        <input
+                          type="text"
+                          id="antecedenteCirurgico"
+                          class="form-control form-control-lg"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="resultCirurgia" class="form-label"
+                          >Resultado da Cirurgia</label
+                        >
+                        <input
+                          type="text"
+                          id="resultCirurgia"
+                          class="form-control form-control-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="tratamentoAnterior" class="form-label"
+                          >Tratamento Anterior? Se sim, qual?</label
+                        >
+                        <input
+                          type="text"
+                          id="tratamentoAnterior"
+                          class="form-control form-control-lg"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="resultTratamento" class="form-label"
+                          >Resultado do Tratamento</label
+                        >
+                        <input
+                          type="text"
+                          id="resultTratamento"
+                          class="form-control form-control-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="antecedenteAlergico" class="form-label"
+                          >Antecedente Alérgico? Se sim, qual?</label
+                        >
+                        <input
+                          type="text"
+                          id="antecedenteAlergico"
+                          class="form-control form-control-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="antecedenteOncologico" class="form-label"
+                          >Antecedente Oncológico? Se sim, qual?</label
+                        >
+                        <input
+                          type="text"
+                          id="antecedenteOncologico"
+                          class="form-control form-control-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="tratamentoOrto" class="form-label"
+                          >Tratamento Ortomolecular? Se sim, qual?</label
+                        >
+                        <input
+                          type="text"
+                          id="tratamentoOrto"
+                          class="form-control form-control-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="obsHistorico" class="form-label"
+                          >Observação</label
+                        >
+                        <input
+                          type="text"
+                          id="obsHistorico"
+                          class="form-control form-control-lg"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Patologias</legend>
+
+                  <div class="row justify-content-center">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="problemaOrto"
+                        />
+                        <label class="form-check-label" for="problemaOrto"
+                          >Problemas Ortopédicos</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="osteoporose"
+                        />
+                        <label class="form-check-label" for="osteoporose"
+                          >Osteoporose</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="queloide"
+                        />
+                        <label class="form-check-label" for="queloide"
+                          >Queloide</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="mancha"
+                        />
+                        <label class="form-check-label" for="mancha"
+                          >Manchas</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="vitiligo"
+                        />
+                        <label class="form-check-label" for="vitiligo"
+                          >Vitiligo</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="miomaUterino"
+                        />
+                        <label class="form-check-label" for="miomaUterino"
+                          >Mioma uterino</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="hipertiroidismo"
+                        />
+                        <label class="form-check-label" for="hipertiroidismo"
+                          >Hipertiroidismo</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="diabetes"
+                        />
+                        <label class="form-check-label" for="diabetes"
+                          >Diabetes</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="ovarioPolicistico"
+                        />
+                        <label class="form-check-label" for="ovarioPolicistico"
+                          >Ovário Policístico</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="desequelibrioHormonal"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="desequelibrioHormonal"
+                          >Desequilíbrio Hormonal</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="psoriase"
+                        />
+                        <label class="form-check-label" for="psoriase"
+                          >Psoriase</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="epilepsia"
+                        />
+                        <label class="form-check-label" for="epilepsia"
+                          >Epilepsia</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="lupus"
+                        />
+                        <label class="form-check-label" for="lupus"
+                          >Lupus</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="cancer"
+                        />
+                        <label class="form-check-label" for="cancer"
+                          >Câncer</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="hipertensao"
+                        />
+                        <label class="form-check-label" for="hipertensao"
+                          >Hipertensão</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="problemasCardiacos"
+                        />
+                        <label class="form-check-label" for="problemasCardiacos"
+                          >Problemas Cardíacos</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="trombose"
+                        />
+                        <label class="form-check-label" for="trombose"
+                          >Trombose</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="has"
+                        />
+                        <label class="form-check-label" for="has">HAS</label>
+                      </div>
+                    </div>
+                    <div class="col"></div>
+                  </div>
+
+                  <div class="row justify-content-center">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="marcapasso"
+                        />
+                        <label class="form-check-label" for="marcapasso"
+                          >Marcapasso</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="placa"
+                        />
+                        <label class="form-check-label" for="placa"
+                          >Placas</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="pino"
+                        />
+                        <label class="form-check-label" for="pino">Pinos</label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="lenteCtt"
+                        />
+                        <label class="form-check-label" for="lenteCtt"
+                          >Lente de contato</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="proteseDentaria"
+                        />
+                        <label class="form-check-label" for="proteseDentaria"
+                          >Prótese dentária</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Medicamento</legend>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="corticoide"
+                        />
+                        <label class="form-check-label" for="corticoide"
+                          >Corticoide</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="complexoB"
+                        />
+                        <label class="form-check-label" for="complexoB"
+                          >Complexo B</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="vitE"
+                        />
+                        <label class="form-check-label" for="vitE"
+                          >Vitamina E</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="anticoncepcional"
+                        />
+                        <label class="form-check-label" for="anticoncepcional"
+                          >Anticoncepcional</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="reposicaoHormonal"
+                        />
+                        <label class="form-check-label" for="reposicaoHormonal"
+                          >Reposição Hormonal</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="diureticos"
+                        />
+                        <label class="form-check-label" for="diureticos"
+                          >Diuréticos</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="roacutan"
+                        />
+                        <label class="form-check-label" for="roacutan"
+                          >Roacutan</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="sibutramina"
+                        />
+                        <label class="form-check-label" for="sibutramina"
+                          >Sibutramina</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="outroMed" style="color: #707b91"
+                          >Toma algum outro medicamento?</label
+                        >
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          id="outroMed"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="alergia" style="color: #707b91"
+                          >Tem alergia a algum medicamento ou cosmético? Se sim,
+                          quais?</label
+                        >
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          id="alergia"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3 align-items-center">
+                    <div class="col-auto">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="mtSensibilidade"
+                        />
+                        <label class="form-check-label" for="mtSensibilidade"
+                          >Possui muita sensibilidade?</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col-auto">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="gestante"
+                        />
+                        <label class="form-check-label" for="gestante"
+                          >É gestante?</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="numFilhos" style="color: #707b91"
+                          >Possui quantos filhos?</label
+                        >
+                        <input
+                          class="form-control form-control-lg"
+                          type="number"
+                          id="numFilhos"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="cicloMenstrual" style="color: #707b91"
+                          >Ciclo Menstrual</label
+                        >
+                        <select
+                          class="form-select form-select-lg"
+                          id="cicloMenstrual"
+                        >
+                          <option value="" selected>...</option>
+                          <option value="1">Regular</option>
+                          <option value="2">Irregular</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Estilo de Vida & Hábitos</legend>
+
+                  <div class="row mb-3">
+                    <div class="col-auto">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="mtTempoSentado"
+                        />
+                        <label class="form-check-label" for="mtTempoSentado">
+                          Passa muito tempo sentado(a)?
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="atividadeFisica" style="color: #707b91"
+                          >Faz atividade física ou pratica esportes? Se sim,
+                          quais?</label
+                        >
+                        <input
+                          class="form-control form-control-lg"
+                          type="number"
+                          id="atividadeFisica"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-sm-2">
+                      <div class="form-group">
+                        <label for="horasSono" style="color: #707b91"
+                          >Horas de sono</label
+                        >
+                        <input
+                          class="form-control form-control-lg"
+                          type="number"
+                          id="horasSono"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col-auto">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="fumante"
+                        />
+                        <label class="form-check-label" for="fumante">
+                          É fumante?
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="alcool" style="color: #707b91"
+                          >Bebe álcool? Se sim, quanto?</label
+                        >
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          id="alcool"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="preenchimento" style="color: #707b91"
+                          >Fez preenchimento? Se sim, onde?</label
+                        >
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          id="preenchimento"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label for="tratamentoMedico" style="color: #707b91"
+                          >Faz tratamento médico? Se sim, quais?</label
+                        >
+                        <input
+                          class="form-control form-control-lg"
+                          type="text"
+                          id="tratamentoMedico"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Alimentação</legend>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="gordura"
+                        />
+                        <label class="form-check-label" for="gordura">
+                          Gordura
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="doce"
+                        />
+                        <label class="form-check-label" for="doce">
+                          Doce
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="condimentada"
+                        />
+                        <label class="form-check-label" for="condimentada">
+                          Condimentada
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="verdura"
+                        />
+                        <label class="form-check-label" for="verdura">
+                          Verdura
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="dieta"
+                        />
+                        <label class="form-check-label" for="dieta">
+                          Dieta
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="fibra"
+                        />
+                        <label class="form-check-label" for="fibra">
+                          Fibra
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="intestinoPreso"
+                        />
+                        <label class="form-check-label" for="intestinoPreso">
+                          Tem intestino preso?
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="poucaAgua"
+                        />
+                        <label class="form-check-label" for="poucaAgua">
+                          Pouca água
+                        </label>
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="checkbox"
+                          id="poucaUrina"
+                        />
+                        <label class="form-check-label" for="poucaUrina">
+                          Pouca urina
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="form-group">
+                  <button class="btn btn-primary" type="submit">
+                    Cadastrar informações
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseTwo"
+              aria-expanded="false"
+              aria-controls="collapseTwo"
+            >
+              Anamnese de Fisioterapia
+            </button>
+          </h2>
+          <div
+            id="collapseTwo"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <form class="mb-3">
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Avaliação Clínica</legend>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="queixaPrincipal"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Queixa Principal</label
+                        >
+                        <input
+                          id="queixaPrincipal"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="outroMed"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="semiologia"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Semiologia</label
+                        >
+                        <input
+                          id="semiologia"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="outroMed"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="testesEspecificos"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Testes específicos</label
+                        >
+                        <input
+                          id="testesEspecificos"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="outroMed"
+                        />
+                      </div>
+                    </div>
+
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="intensidadeDor"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Intensidade da Dor</label
+                        >
+                        <select
+                          id="intensidadeDor"
+                          class="form-select form-select-lg"
+                          name="intensidadeDor"
+                        >
+                          <option>de 0 a 10</option>
+                          <option value="0">0</option>
+                          <option value="1">1</option>
+                          <option value="2">2</option>
+                          <option value="3">3</option>
+                          <option value="4">4</option>
+                          <option value="5">5</option>
+                          <option value="6">6</option>
+                          <option value="7">7</option>
+                          <option value="8">8</option>
+                          <option value="9">9</option>
+                          <option value="10">10</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Apresentação</legend>
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="deambulando"
+                        />
+                        <label class="form-check-label" for="deambulando"
+                          >Deambulando</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="deambulandoAuxilio"
+                        />
+                        <label class="form-check-label" for="deambulandoAuxilio"
+                          >Deambulando c/ auxílio</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="orientado"
+                        />
+                        <label class="form-check-label" for="orientado"
+                          >Orientado</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="internado"
+                        />
+                        <label class="form-check-label" for="internado"
+                          >Internado</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="cadeiraRodas"
+                        />
+                        <label class="form-check-label" for="cadeiraRodas"
+                          >Cadeira de rodas</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Avaliação Histórica</legend>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="hma"
+                          class="form-label"
+                          style="color: #707b91"
+                          >HMA</label
+                        >
+                        <input
+                          id="hma"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="hma"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="hmp"
+                          class="form-label"
+                          style="color: #707b91"
+                          >HMP</label
+                        >
+                        <input
+                          id="hmp"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="hmp"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="antecedentesPessoais"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Antecedentes Pessoais</label
+                        >
+                        <input
+                          id="antecedentesPessoais"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="antecedentesPessoais"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="antecedentesFamiliares"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Antecedentes Familiares</label
+                        >
+                        <input
+                          id="antecedentesFamiliares"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="antecedentesFamiliares"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="examesComplementares"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Exames Complementares</label
+                        >
+                        <input
+                          id="examesComplementares"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="examesComplementares"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Resultado da Inspeção</legend>
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="normal"
+                        />
+                        <label class="form-check-label" for="normal"
+                          >Normal</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="edema"
+                        />
+                        <label class="form-check-label" for="edema"
+                          >Edema</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="cicatrizacaoIncompleta"
+                        />
+                        <label
+                          class="form-check-label"
+                          for="cicatrizacaoIncompleta"
+                          >Cicatrização incompleta</label
+                        >
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-check">
+                        <input
+                          type="checkbox"
+                          class="form-check-input"
+                          id="eritemas"
+                        />
+                        <label class="form-check-label" for="eritemas"
+                          >Eritemas</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="outroResultado"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Outro Resultado</label
+                        >
+                        <input
+                          id="outroResultado"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="outroResultado"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend class="mb-3">Tratamento</legend>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="objetivosTratamento"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Objetivos de Tratamento</label
+                        >
+                        <input
+                          id="objetivosTratamento"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="objetivosTratamento"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="recursosTerapeuticos"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Recursos Terapêuticos</label
+                        >
+                        <textarea
+                          id="recursosTerapeuticos"
+                          class="form-control form-control-lg"
+                          name="recursosTerapeuticos"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="planoTratamento"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Plano de Tratamento</label
+                        >
+                        <textarea
+                          id="planoTratamento"
+                          class="form-control form-control-lg"
+                          name="planoTratamento"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">
+                    Cadastrar informações
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button
+              class="accordion-button collapsed"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#collapseThree"
+              aria-expanded="false"
+              aria-controls="collapseThree"
+            >
+              Anamnese de Estética
+            </button>
+          </h2>
+          <div
+            id="collapseThree"
+            class="accordion-collapse collapse"
+            data-bs-parent="#accordionExample"
+          >
+            <div class="accordion-body">
+              <form class="mb-3">
+                <fieldset class="mb-3">
+                  <legend class="mb-3">ESTÉTICA CORPORAL</legend>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="queixasPrincipais"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Queixas Principais</label
+                        >
+                        <input
+                          id="queixasPrincipais"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="queixasPrincipais"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="lesoes"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Tem lesões? Se sim, quais?</label
+                        >
+                        <input
+                          id="lesoes"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="lesoes"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="varizes"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Tem varizes? Se sim, qual grau?</label
+                        >
+                        <input
+                          id="varizes"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="varizes"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row mb-3">
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="cuidadosDiarios"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Faz Cuidados Diários? Se sim, usa quais
+                          produtos?</label
+                        >
+                        <input
+                          id="cuidadosDiarios"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="cuidadosDiarios"
+                        />
+                      </div>
+                    </div>
+                    <div class="col">
+                      <div class="form-group">
+                        <label
+                          for="acidos"
+                          class="form-label"
+                          style="color: #707b91"
+                          >Usa ou já usou ácidos na pele? Se sim, quais?</label
+                        >
+                        <input
+                          id="acidos"
+                          type="text"
+                          class="form-control form-control-lg"
+                          name="acidos"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="mb-3">
+                  <legend>ESTÉTICA FACIAL</legend>
+
+                  <fieldset class="mb-3">
+                    <legend class="mb-3">Queixas Faciais</legend>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="colo"
+                          />
+                          <label class="form-check-label" for="colo"
+                            >Colo</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="faceCompleta"
+                          />
+                          <label class="form-check-label" for="faceCompleta"
+                            >Face completa</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="flacidezPele"
+                          />
+                          <label class="form-check-label" for="flacidezPele"
+                            >Flacidez de pele</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="flacidezMuscular"
+                          />
+                          <label class="form-check-label" for="flacidezMuscular"
+                            >Flacidez muscular</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="pescoco"
+                          />
+                          <label class="form-check-label" for="pescoco"
+                            >Pescoço</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="palpebras"
+                          />
+                          <label class="form-check-label" for="palpebras"
+                            >Pálpebras</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="papada"
+                          />
+                          <label class="form-check-label" for="papada"
+                            >Papada</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="contornoFace"
+                          />
+                          <label class="form-check-label" for="contornoFace"
+                            >Contorno da face</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="ressecamento"
+                          />
+                          <label class="form-check-label" for="ressecamento"
+                            >Ressecamento da pele</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="olheiras"
+                          />
+                          <label class="form-check-label" for="olheiras"
+                            >Olheiras</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="sardas"
+                          />
+                          <label class="form-check-label" for="sardas"
+                            >Sardas</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="rugasOlhos"
+                          />
+                          <label class="form-check-label" for="rugasOlhos"
+                            >Rugas no contorno dos olhos</label
+                          >
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="form-check">
+                          <input
+                            class="form-check-input"
+                            type="checkbox"
+                            id="oleosidade"
+                          />
+                          <label class="form-check-label" for="oleosidade"
+                            >Excesso de oleosidade</label
+                          >
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <div class="form-group">
+                          <label
+                            for="outraQueixa"
+                            class="form-label"
+                            style="color: #707b91"
+                            >Alguma outra queixa?</label
+                          >
+                          <input
+                            id="outraQueixa"
+                            type="text"
+                            class="form-control form-control-lg"
+                            name="outraQueixa"
+                          />
+                        </div>
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="mb-3">
+                    <legend class="mb-3">Higiene</legend>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <select
+                          class="form-select form-select-lg"
+                          aria-label="Default select example"
+                        >
+                          <option>...</option>
+                          <option value="1">1 a 2x ao dia</option>
+                          <option value="2">3x ou mais ao dia</option>
+                        </select>
+                        <label style="color: #707b91"
+                          >Quantas vezes lava o rosto?</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input
+                          type="text"
+                          class="form-control form-control-lg"
+                        />
+                        <label style="color: #707b91"
+                          >Usa qual(is) produto(s)?</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input
+                          type="text"
+                          class="form-control form-control-lg"
+                        />
+                        <label style="color: #707b91">Usa cosmético(s)?</label>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <input type="checkbox" id="limpeza" /><label
+                          for="limpeza"
+                        >
+                          Limpeza</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="tonico" /><label
+                          for="tonico"
+                        >
+                          Tônico</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="hidratante" /><label
+                          for="hidratante"
+                        >
+                          Hidratante</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="fps" /><label for="fps">
+                          FPS</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="mb-3">
+                    <legend class="mb-3">Avaliação da Pele</legend>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <select
+                          class="form-select form-select-lg"
+                          aria-label="Default select example"
+                        >
+                          <option>...</option>
+                          <option value="1">
+                            Tipo I - Pele muito clara, sempre queima, nunca
+                            bronzeia
+                          </option>
+                          <option value="2">
+                            Tipo II - Pele clara, sempre queima, e algumas vezes
+                            bronzeia
+                          </option>
+                          <option value="3">
+                            Tipo III - Pele menos clara, algumas vezes queima,
+                            sempre bronzeia
+                          </option>
+                          <option value="4">
+                            Tipo IV - Pele morena clara, raramente queima,
+                            sempre bronzeia
+                          </option>
+                          <option value="5">
+                            Tipo V - Pele morena escura, nunca queima, sempre
+                            bronzeia
+                          </option>
+                          <option value="6">
+                            Tipo VI - Pele negra, nunca queima, sempre bronzeia
+                          </option>
+                        </select>
+                        <label style="color: #707b91">Tipo de Pele</label>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <select class="form-select form-select-lg">
+                          <option>...</option>
+                          <option value="1">Normal</option>
+                          <option value="2">Lipídica</option>
+                          <option value="3">Alípica</option>
+                          <option value="4">Mista</option>
+                          <option value="5">Acneica</option>
+                          <option value="6">Rugosa</option>
+                        </select>
+                        <label style="color: #707b91">Biotipo Cutâneo</label>
+                      </div>
+                      <div class="col">
+                        <select class="form-select form-select-lg">
+                          <option>...</option>
+                          <option value="1">Grau I</option>
+                          <option value="2">Grau II</option>
+                          <option value="3">Grau III</option>
+                          <option value="4">Grau IV</option>
+                        </select>
+                        <label style="color: #707b91">Pele com Acne</label>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <select class="form-select form-select-lg">
+                          <option>...</option>
+                          <option value="1">Lisa</option>
+                          <option value="2">Espessa</option>
+                          <option value="3">Fina</option>
+                          <option value="4">Áspera</option>
+                        </select>
+                        <label style="color: #707b91">Ao Tato</label>
+                      </div>
+                      <div class="col">
+                        <select class="form-select form-select-lg">
+                          <option>...</option>
+                          <option value="1">Superficial</option>
+                          <option value="2">Profunda</option>
+                          <option value="3">Normal</option>
+                        </select>
+                        <label style="color: #707b91">Hidratação</label>
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col"><label>Flacidez da pele:</label></div>
+                      <div class="col">
+                        <input type="checkbox" id="face" /><label for="face">
+                          Face</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="queixo" /><label
+                          for="queixo"
+                        >
+                          Queixo</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="pescoco" /><label
+                          for="pescoco"
+                        >
+                          Pescoço</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="palpebras" /><label
+                          for="palpebras"
+                        >
+                          Pálpebras</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+                  <fieldset class="mb-3">
+                    <legend class="mb-3">Lesões e Alterações</legend>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <input type="checkbox" id="atrofia" /><label
+                          for="atrofia"
+                        >
+                          Atrofia</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="rugas-dinamicas" /><label
+                          for="rugas-dinamicas"
+                        >
+                          Rugas dinâmicas</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="rugas-estaticas" /><label
+                          for="rugas-estaticas"
+                        >
+                          Rugas estáticas</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="melasma" /><label
+                          for="melasma"
+                        >
+                          Melasma</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="poiquilodermia" /><label
+                          for="poiquilodermia"
+                        >
+                          Poiquilodermia</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <input type="checkbox" id="petequias" /><label
+                          for="petequias"
+                        >
+                          Petéquias</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="angioma" /><label
+                          for="angioma"
+                        >
+                          Angioma</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="efelides" /><label
+                          for="efelides"
+                        >
+                          Efélides</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="cisto" /><label for="cisto">
+                          Cisto</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <input type="checkbox" id="xantelasma" /><label
+                          for="xantelasma"
+                        >
+                          Xantelasma</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="seringoma" /><label
+                          for="seringoma"
+                        >
+                          Seringoma</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="verruga" /><label
+                          for="verruga"
+                        >
+                          Verruga</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="papulas" /><label
+                          for="papulas"
+                        >
+                          Pápulas</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="nevos" /><label for="nevos">
+                          Nevos</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <input type="checkbox" id="telangectasia" /><label
+                          for="telangectasia"
+                        >
+                          Telangectasia</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="ptose" /><label for="ptose">
+                          Ptose</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="escoriacao" /><label
+                          for="escoriacao"
+                        >
+                          Escoriação</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="cicatriz" /><label
+                          for="cicatriz"
+                        >
+                          Cicatriz</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="hirsutismo" /><label
+                          for="hirsutismo"
+                        >
+                          Hirsutismo</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <input type="checkbox" id="hipertricose" /><label
+                          for="hipertricose"
+                        >
+                          Hipertricose</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="abscesso" /><label
+                          for="abscesso"
+                        >
+                          Abscesso</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="rosacea" /><label
+                          for="rosacea"
+                        >
+                          Rosácea</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="herpes" /><label
+                          for="herpes"
+                        >
+                          Herpes</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <input type="checkbox" id="comedoes-fechados" /><label
+                          for="comedoes-fechados"
+                        >
+                          Comedões fechados</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="comedoes-abertos" /><label
+                          for="comedoes-abertos"
+                        >
+                          Comedões abertos</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="milium" /><label
+                          for="milium"
+                        >
+                          Milium</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="acromia" /><label
+                          for="acromia"
+                        >
+                          Acromia</label
+                        >
+                      </div>
+                      <div class="col">
+                        <input type="checkbox" id="pustulas" /><label
+                          for="pustulas"
+                        >
+                          Pústulas</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+
+                  <fieldset class="mb-3">
+                    <legend class="mb-3">Tratamento</legend>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <textarea
+                          class="form-control form-control-lg"
+                        ></textarea>
+                        <label style="color: #707b91"
+                          >Tratamento Indicado</label
+                        >
+                      </div>
+                    </div>
+
+                    <div class="row mb-3">
+                      <div class="col">
+                        <textarea
+                          class="form-control form-control-lg"
+                        ></textarea>
+                        <label style="color: #707b91"
+                          >Recomendação para manutenção diurna</label
+                        >
+                      </div>
+                      <div class="col">
+                        <textarea
+                          class="form-control form-control-lg"
+                        ></textarea>
+                        <label style="color: #707b91"
+                          >Recomendação para manutenção noturna</label
+                        >
+                      </div>
+                    </div>
+                  </fieldset>
+                </fieldset>
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary">
+                    Cadastrar informações
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/bootstrap.min.js"></script>
+  </body>
+</html>

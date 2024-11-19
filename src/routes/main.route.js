@@ -1,11 +1,18 @@
 const express = require("express");
 const route = express.Router();
 
-const userController = require("../controllers/main.controller");
+const {
+  helloWorld,
+  paginaCadastro,
+  paginaLogin,
+  paginaPrincipal,
+  paginaProntuario,
+} = require("../controllers/main.controller");
 
-route.get("/", userController.helloWorld);
-route.get("/cadastro", userController.paginaCadastro);
-route.get("/login", userController.paginaLogin);
-route.get("/home", userController.paginaPrincipal);
+route.get("/", helloWorld);
+route.get("/cadastro", paginaCadastro);
+route.get("/login", paginaLogin);
+route.get("/home", paginaPrincipal);
+route.get("/prontuario", paginaProntuario);
 
 module.exports = route;
