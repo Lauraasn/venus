@@ -1,0 +1,31 @@
+.styled-form {
+  max-width: 500px;
+  padding: 2rem;
+}
+
+.styled-form-control {
+  flex-grow: 2;
+  max-width: 400px;
+  width: 100%;
+  border: 1px solid #baa49c;
+  border-radius: 0px;
+  box-shadow: none;
+  color: #8b5e57;
+  padding: 10px 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+}
+
+.styled-form-control::placeholder {
+  color: #8b5e57;
+  font-size: 20px;
+}
+
+.styled-form-control:focus {
+  box-shadow: none;
+  outline: 2px solid #baa49c;
+}
+
+.styled-form-control:hover {
+  outline: 2px solid #baa49c;
+}

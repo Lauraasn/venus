@@ -4,13 +4,51 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vênus</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link rel="stylesheet" href="../css/login-cadastro.css" />
+    <link rel="stylesheet" href="../css/form.css" />
+    <link rel="stylesheet" href="../css/bootstrap.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap"
+      rel="stylesheet"
+    />
   </head>
-  <body>
-    <h1>Cadastro</h1>
-    <form action="/auth/cadastro" method="POST">
-      <input type="email" name="email" placeholder="Email" required />
-      <input type="senha" name="senha" placeholder="Senha" required />
-      <button type="submit">Cadastrar</button>
-    </form>
+  <body class="gold-bg">
+    <div
+      class="container-fluid d-flex flex-column justify-content-center align-items-center login-card"
+    >
+      <h1 class="heading-1">Cadastro</h1>
+      <form class="styled-form" action="/auth/cadastro" method="POST">
+        <input
+          class="styled-form-control"
+          type="email"
+          name="email"
+          placeholder="Email"
+          required
+        />
+        <input
+          class="styled-form-control"
+          type="password"
+          name="senha"
+          placeholder="Senha"
+          required
+        />
+        <input
+          class="styled-form-control"
+          type="password"
+          name="confirmaSenha"
+          placeholder="Confirmar senha"
+          required
+        />
+        <button class="styled-button mb-3" type="submit">CADASTRAR</button>
+        <p class="text-center">
+          <a class="styled-link" href="/login"
+            >Já tem uma conta? Clique aqui.</a
+          >
+        </p>
+      </form>
+    </div>
   </body>
 </html>

@@ -5,15 +5,26 @@ const {
 } = require("../models/profissional.model");
 
 const fazCadastro = async (req, res) => {
-  const { email, senha } = req.body;
+  const { email, senha, confirmaSenha } = req.body;
+
+  if (!email || !senha || !confirmaSenha) {
+    return res
+      .status(400)
+      .json({ message: "Todos os campos são obrigatórios." });
+  }
+
+  if (senha !== confirmaSenha) {
+    return res.status(400).json({ message: "As senhas não coincidem." });
+  }
 
   try {
     await cadastraProfissional(email, senha);
-
-    res.redirect("/home");
+    return res.redirect("/home");
   } catch (err) {
-    console.error("Erro ao cadastrar profissional:", err);
-    res.status(500).json({ message: "Erro no servidor." });
+    console.error("Erro ao cadastrar profissional:", err.message);
+    return res
+      .status(500)
+      .json({ message: "Erro ao cadastrar. Tente novamente mais tarde." });
   }
 };
 
@@ -35,8 +46,10 @@ const fazLogin = async (req, res) => {
 
     res.redirect("/home");
   } catch (err) {
-    console.error("Erro ao logar profissional:", err);
-    res.status(500).json({ message: "Erro no servidor." });
+    console.error("Erro ao logar profissional:", err.message);
+    res
+      .status(500)
+      .json({ message: "Erro ao logar. Tente novamente mais tarde." });
   }
 };
 

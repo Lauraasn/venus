@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.marcellus-regular {
+  font-family: "Marcellus", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.heading-1 {
+  font-size: 2.5rem;
+  font-family: "Marcellus";
+  color: #8b5e57;
+  /* margin-bottom: 2rem; */
+  text-align: center;
+  width: 100%;
+}
+
+.styled-link {
+  color: #d3a89f;
+  text-decoration: none;
+}
+
+.styled-link:hover {
+  color: #8b5e57;
+}
+
+.styled-button {
+  width: 100%;
+  background-color: #e9c7c1;
+  border: none;
+  color: #8b5e57;
+  padding: 10px 0px;
+  margin-top: 35px;
+  font-weight: bold;
+  font-family: "Marcellus";
+  border-radius: 0px;
+}
+
+.styled-button:hover {
+  background-color: #d3a89f !important;
+  color: #8b5e57 !important;
+}
+
+.styled-button:active {
+  background-color: #d3a89f !important;
+  color: #8b5e57 !important;
+}
+
+.styled-button:focus {
+  background-color: #e9c7c1 !important;
+  color: #8b5e57 !important;
+}
