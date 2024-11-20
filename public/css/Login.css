@@ -1,0 +1,19 @@
+*{margin: 0;
+  padding: 0;}
+
+.gold-bg {
+    background-image: url('../../public/rosegold-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100vw;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 400px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
