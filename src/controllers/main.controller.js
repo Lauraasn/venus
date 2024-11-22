@@ -17,7 +17,7 @@ const paginaPrincipal = (req, res) => {
 };
 
 const paginaProntuario = (req, res) => {
-  res.sendFile(path.join(__dirname, "../../public/html/prontuário.html"));
+  res.sendFile(path.join(__dirname, "../../public/html/prontuario.html"));
 };
 
 const paginaDashboard = (req, res) => {

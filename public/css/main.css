@@ -14,8 +14,11 @@
   font-family: "Marcellus";
   color: #8b5e57;
   /* margin-bottom: 2rem; */
-  text-align: center;
   width: 100%;
+}
+
+.heading-1.center {
+  text-align: center;
 }
 
 .styled-link {
@@ -28,15 +31,18 @@
 }
 
 .styled-button {
-  width: 100%;
   background-color: #e9c7c1;
   border: none;
   color: #8b5e57;
-  padding: 10px 0px;
-  margin-top: 35px;
+  padding: 10px 10px;
   font-weight: bold;
   font-family: "Marcellus";
   border-radius: 0px;
+}
+
+.styled-button.btn-login-cadastro {
+  width: 100%;
+  margin-top: 35px;
 }
 
 .styled-button:hover {
@@ -52,4 +58,28 @@
 .styled-button:focus {
   background-color: #e9c7c1 !important;
   color: #8b5e57 !important;
+}
+
+.navbar.styled-navbar {
+  background-color: #F9EFF0;
+}
+
+.navbar-ul {
+  margin: 0 auto;
+}
+
+.styled-nav-link {
+  color: #a48478 !important;
+  font-family: 'Gill Sans', 'Gill Sans MT',  Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
+}
+
+.styled-nav-link:hover {
+  color: #8d685a !important;
+}
+
+.active.styled-nav-link {
+  color: #8d685a !important;
+  font-family: 'Gill Sans', 'Gill Sans MT',  Calibri, 'Trebuchet MS', sans-serif;
+  font-style: normal;
 }

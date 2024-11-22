@@ -1,3 +1,9 @@
+body {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
 .hidden {
   display: none;
 }
@@ -19,21 +25,62 @@ table {
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  color: #8b5e57;
 }
 
 table th,
 table td {
-  border: 1px solid #ddd;
+  border-bottom: 1px solid #e9c7c1;
   padding: 8px;
 }
 
 table th {
-  background-color: #f2f2f2;
+  /*background-color: #f2f2f2;*/
   text-align: left;
+}
+
+table tr:hover {
+  background-color: #F9EFF0;
+  cursor: pointer;
+}
+
+#table-header:hover {
+  background-color: transparent;
+  cursor: auto;
 }
 
 button {
   padding: 8px 12px;
   margin: 5px 0;
   cursor: pointer;
+}
+
+#close {
+  color: #8b5e57;
+}
+
+#trash,
+#pencil {
+  font-size: 25px;
+  transition: transform 0.1s;
+  display: inline-block;
+}
+
+#trash:hover,
+#pencil:hover {
+  transform: scale(1.05);
+}
+
+#modal {
+  border-bottom: none !important;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
 }

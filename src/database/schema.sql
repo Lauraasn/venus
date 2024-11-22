@@ -2,8 +2,7 @@
 CREATE TABLE IF NOT EXISTS profissional (
     id SERIAL PRIMARY KEY,
     email VARCHAR(255) NOT NULL,
-    senha VARCHAR(255) NOT NULL,
-    id_google VARCHAR(255)
+    senha VARCHAR(255) NOT NULL
 );
 
 -- Tabela "paciente"
@@ -11,10 +10,13 @@ CREATE TABLE IF NOT EXISTS paciente (
     id SERIAL PRIMARY KEY,
     id_profissional INTEGER REFERENCES profissional(id) ON DELETE CASCADE,
     nome VARCHAR(255) NOT NULL,
+    tel VARCHAR(20),
     idade INTEGER,
     sexo CHAR(1) NOT NULL,
     diagnostico VARCHAR(255),
-    observacao VARCHAR(255)
+    observacao VARCHAR(255),
+    ultimo_atendimento TIMESTAMP,
+    proximo_atendimento TIMESTAMP
 );
 
 -- Tabela "endereco"
@@ -33,7 +35,6 @@ CREATE TABLE IF NOT EXISTS endereco (
 CREATE TABLE IF NOT EXISTS info_extra (
     id SERIAL PRIMARY KEY,
     id_paciente INTEGER REFERENCES paciente(id) ON DELETE CASCADE,
-    tel VARCHAR(20),
     data_nasc DATE,
     naturalidade VARCHAR(255),
     profissao VARCHAR(255),
@@ -129,7 +130,7 @@ CREATE TABLE IF NOT EXISTS cardio_circul (
     has BOOLEAN
 );
 
--- Tabela medicamento
+-- Tabela "medicamento"
 CREATE TABLE IF NOT EXISTS medicamento (
     id SERIAL PRIMARY KEY,
     id_paciente INTEGER REFERENCES paciente(id) ON DELETE CASCADE,
@@ -144,7 +145,7 @@ CREATE TABLE IF NOT EXISTS medicamento (
     outro_med VARCHAR(255)
 );
 
--- Tabela info_med
+-- Tabela "info_med"
 CREATE TABLE IF NOT EXISTS info_med (
     id SERIAL PRIMARY KEY,
     id_medicamento INTEGER REFERENCES medicamento(id) ON DELETE CASCADE,
@@ -155,7 +156,7 @@ CREATE TABLE IF NOT EXISTS info_med (
     ciclo_menstrual VARCHAR(255)
 );
 
--- Tabela estilo_vida
+-- Tabela "estilo_vida"
 CREATE TABLE IF NOT EXISTS estilo_vida (
     id SERIAL PRIMARY KEY,
     id_paciente INTEGER REFERENCES paciente(id) ON DELETE CASCADE,
@@ -168,7 +169,7 @@ CREATE TABLE IF NOT EXISTS estilo_vida (
     tratamento_med VARCHAR(255) DEFAULT 'Não'
 );
 
--- Tabela alimentacao
+-- Tabela "alimentacao"
 CREATE TABLE IF NOT EXISTS alimentacao (
     id SERIAL PRIMARY KEY,
     id_estilo_vida INTEGER REFERENCES estilo_vida(id) ON DELETE CASCADE,
@@ -183,7 +184,7 @@ CREATE TABLE IF NOT EXISTS alimentacao (
     pouca_urina BOOLEAN
 );
 
--- Tabela fisioterapia
+-- Tabela "fisioterapia"
 CREATE TABLE IF NOT EXISTS fisioterapia (
     id SERIAL PRIMARY KEY,
     id_paciente INTEGER REFERENCES paciente(id) ON DELETE CASCADE,
@@ -192,7 +193,7 @@ CREATE TABLE IF NOT EXISTS fisioterapia (
     plano_tratamento_fisio TEXT
 );
 
--- Tabela fisio_avaliacao_clinica
+-- Tabela "fisio_avaliacao_clinica"
 CREATE TABLE IF NOT EXISTS fisio_avaliacao_clinica (
     id SERIAL PRIMARY KEY,
     id_fisio INTEGER REFERENCES fisioterapia(id) ON DELETE CASCADE,
@@ -202,7 +203,7 @@ CREATE TABLE IF NOT EXISTS fisio_avaliacao_clinica (
     intensidade_dor INTEGER
 );
 
--- Tabela fisio_apresentacao
+-- Tabela "fisio_apresentacao"
 CREATE TABLE IF NOT EXISTS fisio_apresentacao (
     id SERIAL PRIMARY KEY,
     id_fisio INTEGER REFERENCES fisioterapia(id) ON DELETE CASCADE,
@@ -213,7 +214,7 @@ CREATE TABLE IF NOT EXISTS fisio_apresentacao (
     deambulando_apoio BOOLEAN
 );
 
--- Tabela fisio_avaliacao_historica
+-- Tabela "fisio_avaliacao_historica"
 CREATE TABLE IF NOT EXISTS fisio_avaliacao_historica (
     id SERIAL PRIMARY KEY,
     id_fisio INTEGER REFERENCES fisioterapia(id) ON DELETE CASCADE,
@@ -225,7 +226,7 @@ CREATE TABLE IF NOT EXISTS fisio_avaliacao_historica (
     exames_complementares BOOLEAN
 );
 
--- Tabela fisio_inspecao
+-- Tabela "fisio_inspecao"
 CREATE TABLE IF NOT EXISTS fisio_inspecao (
     id SERIAL PRIMARY KEY,
     id_fisio INTEGER REFERENCES fisioterapia(id) ON DELETE CASCADE,
@@ -236,7 +237,7 @@ CREATE TABLE IF NOT EXISTS fisio_inspecao (
     outro_result_inspecao VARCHAR(255)
 );
 
--- Tabela estetica_corpo
+-- Tabela "estetica_corpo"
 CREATE TABLE IF NOT EXISTS estetica_corpo (
     id SERIAL PRIMARY KEY,
     id_paciente INTEGER REFERENCES paciente(id) ON DELETE CASCADE,
