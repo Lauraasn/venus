@@ -5,7 +5,7 @@
 
 .styled-form-control {
   flex-grow: 2;
-  max-width: 400px;
+  /*max-width: 400px;*/
   width: 100%;
   border: 1px solid #baa49c;
   border-radius: 0px;
@@ -28,4 +28,13 @@
 
 .styled-form-control:hover {
   outline: 2px solid #baa49c;
+}
+
+#accordion {
+  --bs-accordion-btn-bg: #f9eff0;
+  --bs-accordion-btn-color:#8d685a;
+  --bs-accordion-active-bg: #e9c7c1;
+  --bs-accordion-active-color:#8d685a;
+  --bs-accordion-btn-focus-box-shadow: none;
+  --bs-accordion-bg: #f9eff0;
 }

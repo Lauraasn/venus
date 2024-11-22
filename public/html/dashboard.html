@@ -8,16 +8,57 @@
     <script src="https://code.highcharts.com/modules/exporting.js"></script>
     <script src="https://code.highcharts.com/modules/export-data.js"></script>
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
+    <link rel="stylesheet" href="../css/main.css" />
     <link rel="stylesheet" href="../css/dashboard.css" />
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
   </head>
   <body>
+    <header>
+      <nav class="navbar styled-navbar navbar-expand-sm">
+        <div class="container-fluid">
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav navbar-ul me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a
+                  class="nav-link styled-nav-link"
+                  aria-current="page"
+                  href="/home"
+                  >HOME</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link styled-nav-link" href="/prontuario"
+                  >PRONTUÁRIO</a
+                >
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active styled-nav-link" href="#"
+                  >DASHBOARD</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
     <div class="dashboard-container">
       <div class="chart-container">
-        <h3>Vendas por Mês</h3>
+        <h3>Pacientes por Faixa Etária</h3>
         <div id="chart1"></div>
       </div>
       <div class="chart-container">
-        <h3>Distribuição de Produtos</h3>
+        <h3>Distribuição de Gênero dos Pacientes</h3>
         <div id="chart2"></div>
       </div>
       <div class="chart-container">
