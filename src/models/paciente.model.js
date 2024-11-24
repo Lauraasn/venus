@@ -1,12 +1,12 @@
 const pool = require("../database/db");
 
-const cadastraPaciente = async (nome, idade, sexo, diagnostico, observacao) => {
+const cadastraPaciente = async (nome, idade, sexo, diagnostico, observacao, tel, ultimo_atendimento, proximo_atendimento) => {
   const query = `
-            INSERT INTO paciente (nome, idade, sexo, diagnostico, observacao)
-            VALUES ($1, $2, $3, $4, $5)
+            INSERT INTO paciente (nome, idade, sexo, diagnostico, observacao, tel, ultimo_atendimento, proximo_atendimento)
+            VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
             RETURNING *;
         `;
-  const values = [nome, idade, sexo, diagnostico, observacao];
+  const values = [nome, idade, sexo, diagnostico, observacao, tel, ultimo_atendimento, proximo_atendimento];
 
   const result = await pool.query(query, values);
   return result.rows[0];
@@ -42,7 +42,10 @@ const updatePaciente = async (
   idade,
   sexo,
   diagnostico,
-  observacao
+  observacao,
+  tel,
+  ultimo_atendimento,
+  proximo_atendimento
 ) => {
   const query = `
       UPDATE paciente
@@ -51,12 +54,16 @@ const updatePaciente = async (
         idade = COALESCE($3, idade),
         sexo = COALESCE($4, sexo),
         diagnostico = COALESCE($5, diagnostico),
-        observacao = COALESCE($6, observacao)
+        observacao = COALESCE($6, observacao),
+        tel = COALESCE($7, tel), 
+        ultimo_atendimento = COALESCE($8, ultimo_atendimento), 
+        proximo_atendimento = COALESCE($9, proximo_atendimento)
+
       WHERE id = $1
       RETURNING *;
     `;
 
-  const values = [id, nome, idade, sexo, diagnostico, observacao];
+  const values = [id, nome, idade, sexo, diagnostico, observacao, tel, ultimo_atendimento, proximo_atendimento];
   const result = await pool.query(query, values);
 
   if (result.rows.length === 0) {
@@ -71,6 +78,7 @@ const deletePaciente = async (id) => {
         DELETE FROM paciente
         WHERE id = $1;
     `;
+    
 
     const values = [id];
     const result = await pool.query(query, values);

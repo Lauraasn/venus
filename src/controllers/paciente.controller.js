@@ -8,9 +8,13 @@ const {
 
 const criaPaciente = async (req, res, next) => {
   try {
-    const { nome, idade, sexo, diagnostico, observacao } = req.body;
+    const trataCampos = (campo) => (campo === "" ? null : campo);
+    const { nome, idade, sexo, diagnostico, observacao, tel, ultimoAtendimento, proximoAtendimento } = req.body;
 
-    if (!nome || !idade || !sexo || !diagnostico) {
+    const ultimo_atendimento = ultimoAtendimento ? new Date(ultimoAtendimento) : null;
+    const proximo_atendimento = proximoAtendimento ? new Date(proximoAtendimento) : null;
+    
+    if (!nome || !sexo) {
       return res
         .status(400)
         .json({ message: "Campos obrigatórios não foram preenchidos." });
@@ -18,10 +22,13 @@ const criaPaciente = async (req, res, next) => {
 
     const paciente = await cadastraPaciente(
       nome,
-      idade,
+      trataCampos(idade),
       sexo,
-      diagnostico,
-      observacao
+      trataCampos(diagnostico),
+      trataCampos(observacao),
+      trataCampos(tel),
+      ultimo_atendimento,
+      proximo_atendimento
     );
 
     res.status(201).json({
@@ -70,20 +77,27 @@ const retornaPaciente = async (req, res, next) => {
 
 const atualizaPaciente = async (req, res, next) => {
   try {
-    const { nome, idade, sexo, diagnostico, observacao } = req.body;
+    const trataCampos = (campo) => (campo === "" ? null : campo);
+    const { nome, idade, sexo, diagnostico, observacao, tel, ultimoAtendimento, proximoAtendimento } = req.body;
     const { id } = req.params;
 
     if (!id) {
       return res.status(400).json({ message: "ID do paciente é obrigatório." });
     }
 
+    const ultimo_atendimento = ultimoAtendimento ? new Date(ultimoAtendimento) : null;
+    const proximo_atendimento = proximoAtendimento ? new Date(proximoAtendimento) : null;
+
     const paciente = await updatePaciente(
       id,
       nome,
-      idade,
+      trataCampos(idade),
       sexo,
-      diagnostico,
-      observacao
+      trataCampos(diagnostico),
+      trataCampos(observacao),
+      trataCampos(tel),
+      ultimo_atendimento,
+      proximo_atendimento
     );
 
     res.status(200).json({

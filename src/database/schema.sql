@@ -10,11 +10,11 @@ CREATE TABLE IF NOT EXISTS paciente (
     id SERIAL PRIMARY KEY,
     id_profissional INTEGER REFERENCES profissional(id) ON DELETE CASCADE,
     nome VARCHAR(255) NOT NULL,
-    tel VARCHAR(20),
     idade INTEGER,
     sexo CHAR(1) NOT NULL,
     diagnostico VARCHAR(255),
     observacao VARCHAR(255),
+    tel VARCHAR(20),
     ultimo_atendimento TIMESTAMP,
     proximo_atendimento TIMESTAMP
 );
