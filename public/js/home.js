@@ -80,9 +80,6 @@ const resetForm = () => {
 const handleSubmit = async (e) => {
   e.preventDefault();
 
-  const ultimoAtendimento = document.getElementById("ultimoAtendimento").value || "";
-  const proximoAtendimento = document.getElementById("proximoAtendimento").value || "";
-
   const formData = {
     nome: document.getElementById("nome").value,
     idade: document.getElementById("idade").value || null,
@@ -90,8 +87,8 @@ const handleSubmit = async (e) => {
     diagnostico: document.getElementById("diagnostico").value || null,
     observacao: document.getElementById("observacao").value || null,
     tel: document.getElementById("tel").value || null,
-    ultimoAtendimento: ultimoAtendimento || null,
-    proximoAtendimento: proximoAtendimento || null,
+    ultimoAtendimento: document.getElementById("ultimoAtendimento").value || null,
+    proximoAtendimento: document.getElementById("proximoAtendimento").value || null,
   };
 
   try {
