@@ -94,8 +94,7 @@
                             type="text"
                             name="nome"
                             value=""
-                            onchange="handleInputChange(event)"
-                            placeholder=" "
+                            required
                           />
                         </div>
                       </div>
@@ -110,7 +109,6 @@
                             type="text"
                             name="idade"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -125,7 +123,7 @@
                             type="text"
                             name="sexo"
                             value=""
-                            onchange="handleInputChange(event)"
+                            required
                           />
                         </div>
                       </div>
@@ -143,7 +141,6 @@
                             type="text"
                             name="diagnostico"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -158,7 +155,6 @@
                             type="text"
                             name="observacao"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -175,7 +171,6 @@
                             type="tel"
                             name="tel"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -190,7 +185,6 @@
                             type="datetime-local"
                             name="ultimoAtendimento"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -205,7 +199,6 @@
                             type="datetime-local"
                             name="proximoAtendimento"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -223,11 +216,10 @@
                           >
                           <br>
                           <input
-                            class="styled-form-control"
+                            class="endereco styled-form-control"
                             type="text"
                             name="rua"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -238,11 +230,10 @@
                           >
                           <br>
                           <input
-                            class="styled-form-control"
+                            class="endereco styled-form-control"
                             type="number"
-                            name="numero"
+                            name="num"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -253,11 +244,10 @@
                           >
                           <br>
                           <input
-                            class="styled-form-control"
+                            class="endereco styled-form-control"
                             type="text"
                             name="bairro"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -271,11 +261,10 @@
                           >
                           <br>
                           <input
-                            class="styled-form-control"
+                            class="endereco styled-form-control"
                             type="text"
                             name="cidade"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -286,11 +275,10 @@
                           >
                           <br>
                           <input
-                            class="styled-form-control"
+                            class="endereco styled-form-control"
                             type="text"
                             name="estado"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -304,11 +292,10 @@
                           >
                           <br>
                           <input
-                            class="styled-form-control"
+                            class="endereco styled-form-control"
                             type="text"
-                            name="obsEndereco"
+                            name="obs_endereco"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -322,30 +309,14 @@
                       <div class="col">
                         <div class="">
                           <label class="" style="color: #8b5e57"
-                            >Telefone</label
-                          >
-                          <br>
-                          <input
-                            class="styled-form-control"
-                            type="tel"
-                            name="tel"
-                            value=""
-                            onchange="handleInputChange(event)"
-                          />
-                        </div>
-                      </div>
-                      <div class="col">
-                        <div class="">
-                          <label class="" style="color: #8b5e57"
                             >Data de Nascimento</label
                           >
                           <br>
                           <input
-                            class="styled-form-control"
-                            type="text"
-                            name="dataNascimento"
+                            class="infoExtra styled-form-control"
+                            type="date"
+                            name="data_nasc"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
@@ -356,75 +327,67 @@
                           >
                           <br>
                           <input
-                            class="styled-form-control"
+                            class="infoExtra styled-form-control"
                             type="text"
                             name="naturalidade"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                         </div>
                       </div>
-                    </div>
-
-                    <div class="row mb-3">
-                      <div class="col-sm-8">
+                      <div class="col">
                         <div class="">
                           <label class="" style="color: #8b5e57"
                             >Profissão</label
                           >
                           <br>
                           <input
-                            class="styled-form-control"
+                            class="infoExtra styled-form-control"
                             type="text"
                             name="profissao"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
-                        </div>
-                      </div>
-                      <div class="col-sm-4">
-                        <div class="form-group">
-                          <input
-                            class="form-control form-control-lg"
-                            type="text"
-                            name="estadoCivil"
-                            value=""
-                            onchange="handleInputChange(event)"
-                          />
-                          <label class="form-label" style="color: #707b91"
-                            >Estado Civil</label
-                          >
                         </div>
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <div class="col">
-                        <div class="form-group">
-                          <input
-                            class="form-control form-control-lg"
-                            type="text"
-                            name="indicacao"
-                            value=""
-                            onchange="handleInputChange(event)"
-                          />
+                        <div class="">
                           <label class="form-label" style="color: #707b91"
-                            >Indicação</label
+                            >Estado Civil</label
                           >
+                          <input
+                            class="infoExtra styled-form-control"
+                            type="text"
+                            name="estado_civil"
+                            value=""
+                          />
                         </div>
                       </div>
                       <div class="col">
-                        <div class="form-group">
+                        <div class="">
+                          <label class="form-label" style="color: #707b91"
+                            >Indicação</label
+                          >
                           <input
-                            class="form-control form-control-lg"
+                            class="infoExtra styled-form-control"
                             type="text"
-                            name="encaminhamento"
+                            name="indicacao"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
+                        </div>
+                      </div>
+                      <div class="col">
+                        <div class="">
                           <label class="form-label" style="color: #707b91"
                             >Encaminhamento</label
                           >
+                          <input
+                            class="infoExtra styled-form-control"
+                            type="text"
+                            name="encaminhamento"
+                            value=""
+                          />
                         </div>
                       </div>
                     </div>
@@ -437,11 +400,10 @@
                       <div class="col">
                         <div class="form-group">
                           <input
-                            class="form-control form-control-lg"
+                            class="emergencia styled-form-control"
                             type="text"
-                            name="cttEmergencia"
+                            name="ctt_emergencia"
                             value=""
-                            onchange="handleInputChange(event)"
                           />
                           <label class="form-label" style="color: #707b91"
                             >Contato de Emergência</label
@@ -451,9 +413,9 @@
                       <div class="col">
                         <div class="form-group">
                           <input
-                            class="form-control form-control-lg"
+                            class="emergencia styled-form-control"
                             type="tel"
-                            name="telCtt"
+                            name="tel_ctt"
                             value=""
                             onchange="handleInputChange(event)"
                             placeholder="(00) 00000-0000"
@@ -469,7 +431,7 @@
                       <div class="col">
                         <div class="form-group">
                           <input
-                            class="form-control form-control-lg"
+                            class="emergencia styled-form-control"
                             type="text"
                             name="medico"
                             value=""
@@ -483,9 +445,9 @@
                       <div class="col">
                         <div class="form-group">
                           <input
-                            class="form-control form-control-lg"
+                            class="emergencia styled-form-control"
                             type="tel"
-                            name="telMed"
+                            name="tel_med"
                             value=""
                             onchange="handleInputChange(event)"
                             placeholder="(00) 00000-0000"
@@ -501,7 +463,7 @@
                       <div class="col">
                         <div class="form-group">
                           <input
-                            class="form-control form-control-lg"
+                            class="emergencia styled-form-control"
                             type="text"
                             name="convenio"
                             value=""
@@ -515,9 +477,9 @@
                       <div class="col">
                         <div class="form-group">
                           <input
-                            class="form-control form-control-lg"
+                            class="emergencia styled-form-control"
                             type="text"
-                            name="cartConv"
+                            name="cart_conv"
                             value=""
                             onchange="handleInputChange(event)"
                           />
@@ -529,7 +491,7 @@
                       <div class="col">
                         <div class="form-group">
                           <input
-                            class="form-control form-control-lg"
+                            class="emergencia styled-form-control"
                             type="text"
                             name="hospital"
                             value=""
@@ -553,20 +515,20 @@
                           >
                           <input
                             type="text"
-                            id="antecedenteCirurgico"
-                            class="form-control form-control-lg"
+                            id="antecedente_cirurgico"
+                            class="historico styled-form-control"
                           />
                         </div>
                       </div>
                       <div class="col">
                         <div class="form-group">
-                          <label for="resultCirurgia" class="form-label"
+                          <label for="result_cirurgia" class="form-label"
                             >Resultado da Cirurgia</label
                           >
                           <input
                             type="text"
-                            id="resultCirurgia"
-                            class="form-control form-control-lg"
+                            id="result_cirurgia"
+                            class="historico styled-form-control"
                           />
                         </div>
                       </div>
@@ -580,8 +542,8 @@
                           >
                           <input
                             type="text"
-                            id="tratamentoAnterior"
-                            class="form-control form-control-lg"
+                            id="tratamento_anterior"
+                            class="historico styled-form-control"
                           />
                         </div>
                       </div>
@@ -592,8 +554,8 @@
                           >
                           <input
                             type="text"
-                            id="resultTratamento"
-                            class="form-control form-control-lg"
+                            id="result_tratamento"
+                            class="historico styled-form-control"
                           />
                         </div>
                       </div>
@@ -607,8 +569,8 @@
                           >
                           <input
                             type="text"
-                            id="antecedenteAlergico"
-                            class="form-control form-control-lg"
+                            id="antecedente_alergico"
+                            class="historico styled-form-control"
                           />
                         </div>
                       </div>
@@ -622,8 +584,8 @@
                           >
                           <input
                             type="text"
-                            id="antecedenteOncologico"
-                            class="form-control form-control-lg"
+                            id="antecedente_oncologico"
+                            class="historico styled-form-control"
                           />
                         </div>
                       </div>
@@ -637,8 +599,8 @@
                           >
                           <input
                             type="text"
-                            id="tratamentoOrto"
-                            class="form-control form-control-lg"
+                            id="tratamento_ortomolecular"
+                            class="historico styled-form-control"
                           />
                         </div>
                       </div>
@@ -652,8 +614,8 @@
                           >
                           <input
                             type="text"
-                            id="obsHistorico"
-                            class="form-control form-control-lg"
+                            id="obs_historico_clinico"
+                            class="historico styled-form-control"
                           />
                         </div>
                       </div>
@@ -663,13 +625,28 @@
                   <fieldset class="mb-3">
                     <legend class="mb-3">Patologias</legend>
 
+                    <div class="row mb-3">
+                      <div class="col">
+                        <div class="form-group">
+                          <label for="obs_patologia" class="form-label"
+                            >Observação sobre Patologias</label
+                          >
+                          <input
+                            type="text"
+                            id="obs_patologia"
+                            class="patologia styled-form-control"
+                          />
+                        </div>
+                      </div>
+                    </div>
+
                     <div class="row justify-content-center">
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="muscDerma form-check-input"
                             type="checkbox"
-                            id="problemaOrto"
+                            id="problema_ortopedico"
                           />
                           <label class="form-check-label" for="problemaOrto"
                             >Problemas Ortopédicos</label
@@ -679,7 +656,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="muscDerma form-check-input"
                             type="checkbox"
                             id="osteoporose"
                           />
@@ -691,7 +668,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="muscDerma form-check-input"
                             type="checkbox"
                             id="queloide"
                           />
@@ -703,7 +680,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="muscDerma form-check-input"
                             type="checkbox"
                             id="mancha"
                           />
@@ -715,7 +692,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="muscDerma form-check-input"
                             type="checkbox"
                             id="vitiligo"
                           />
@@ -730,7 +707,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="muscDerma form-check-input"
                             type="checkbox"
                             id="miomaUterino"
                           />
@@ -742,7 +719,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="endoMeta form-check-input"
                             type="checkbox"
                             id="hipertiroidismo"
                           />
@@ -754,7 +731,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="endoMeta form-check-input"
                             type="checkbox"
                             id="diabetes"
                           />
@@ -766,13 +743,13 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="endoMeta form-check-input"
                             type="checkbox"
                             id="ovarioPolicistico"
                           />
                           <label
                             class="form-check-label"
-                            for="ovarioPolicistico"
+                            for="ovario_policistico"
                             >Ovário Policístico</label
                           >
                         </div>
@@ -783,9 +760,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="endoMeta form-check-input"
                             type="checkbox"
-                            id="desequelibrioHormonal"
+                            id="desequelibrio_hormonal"
                           />
                           <label
                             class="form-check-label"
@@ -797,7 +774,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="autoNeuroOnco form-check-input"
                             type="checkbox"
                             id="psoriase"
                           />
@@ -809,7 +786,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="autoNeuroOnco form-check-input"
                             type="checkbox"
                             id="epilepsia"
                           />
@@ -821,7 +798,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="autoNeuroOnco form-check-input"
                             type="checkbox"
                             id="lupus"
                           />
@@ -833,7 +810,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="autoNeuroOnco form-check-input"
                             type="checkbox"
                             id="cancer"
                           />
@@ -848,7 +825,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="cardioCircul form-check-input"
                             type="checkbox"
                             id="hipertensao"
                           />
@@ -860,9 +837,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="cardioCircul form-check-input"
                             type="checkbox"
-                            id="problemasCardiacos"
+                            id="problema_cardiaco"
                           />
                           <label
                             class="form-check-label"
@@ -874,7 +851,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="cardioCircul form-check-input"
                             type="checkbox"
                             id="trombose"
                           />
@@ -886,7 +863,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="cardioCircul form-check-input"
                             type="checkbox"
                             id="has"
                           />
@@ -900,7 +877,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="dispProt form-check-input"
                             type="checkbox"
                             id="marcapasso"
                           />
@@ -912,7 +889,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="dispProt form-check-input"
                             type="checkbox"
                             id="placa"
                           />
@@ -924,7 +901,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="dispProt form-check-input"
                             type="checkbox"
                             id="pino"
                           />
@@ -936,9 +913,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="dispProt form-check-input"
                             type="checkbox"
-                            id="lenteCtt"
+                            id="lente_ctt"
                           />
                           <label class="form-check-label" for="lenteCtt"
                             >Lente de contato</label
@@ -948,9 +925,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="dispProt form-check-input"
                             type="checkbox"
-                            id="proteseDentaria"
+                            id="protese_dentaria"
                           />
                           <label class="form-check-label" for="proteseDentaria"
                             >Prótese dentária</label
@@ -967,7 +944,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="medicamento form-check-input"
                             type="checkbox"
                             id="corticoide"
                           />
@@ -979,9 +956,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="medicamento form-check-input"
                             type="checkbox"
-                            id="complexoB"
+                            id="complexo_b"
                           />
                           <label class="form-check-label" for="complexoB"
                             >Complexo B</label
@@ -991,9 +968,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="medicamento form-check-input"
                             type="checkbox"
-                            id="vitE"
+                            id="vit_e"
                           />
                           <label class="form-check-label" for="vitE"
                             >Vitamina E</label
@@ -1003,7 +980,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="medicamento form-check-input"
                             type="checkbox"
                             id="anticoncepcional"
                           />
@@ -1018,9 +995,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="medicamento form-check-input"
                             type="checkbox"
-                            id="reposicaoHormonal"
+                            id="reposicao_hormonal"
                           />
                           <label
                             class="form-check-label"
@@ -1032,9 +1009,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="medicamento form-check-input"
                             type="checkbox"
-                            id="diureticos"
+                            id="diuretico"
                           />
                           <label class="form-check-label" for="diureticos"
                             >Diuréticos</label
@@ -1044,7 +1021,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="medicamento form-check-input"
                             type="checkbox"
                             id="roacutan"
                           />
@@ -1056,7 +1033,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="medicamento form-check-input"
                             type="checkbox"
                             id="sibutramina"
                           />
@@ -1074,9 +1051,9 @@
                             >Toma algum outro medicamento?</label
                           >
                           <input
-                            class="form-control form-control-lg"
+                            class="medicamento styled-form-control"
                             type="text"
-                            id="outroMed"
+                            id="outro_med"
                           />
                         </div>
                       </div>
@@ -1090,9 +1067,9 @@
                             sim, quais?</label
                           >
                           <input
-                            class="form-control form-control-lg"
+                            class="infoMed styled-form-control"
                             type="text"
-                            id="alergia"
+                            id="alergia_cosm_med"
                           />
                         </div>
                       </div>
@@ -1102,9 +1079,9 @@
                       <div class="col-auto">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="infoMed form-check-input"
                             type="checkbox"
-                            id="mtSensibilidade"
+                            id="mt_sensibilidade"
                           />
                           <label class="form-check-label" for="mtSensibilidade"
                             >Possui muita sensibilidade?</label
@@ -1114,7 +1091,7 @@
                       <div class="col-auto">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="infoMed form-check-input"
                             type="checkbox"
                             id="gestante"
                           />
@@ -1129,9 +1106,9 @@
                             >Possui quantos filhos?</label
                           >
                           <input
-                            class="form-control form-control-lg"
+                            class="infoMed styled-form-control"
                             type="number"
-                            id="numFilhos"
+                            id="qtd_filhos"
                           />
                         </div>
                       </div>
@@ -1140,12 +1117,12 @@
                     <div class="row mb-3">
                       <div class="col">
                         <div class="form-group">
-                          <label for="cicloMenstrual" style="color: #707b91"
+                          <label for="ciclo_menstrual" style="color: #707b91"
                             >Ciclo Menstrual</label
                           >
                           <select
                             class="form-select form-select-lg"
-                            id="cicloMenstrual"
+                            id="ciclo_menstrual"
                           >
                             <option value="" selected>...</option>
                             <option value="1">Regular</option>
@@ -1163,9 +1140,9 @@
                       <div class="col-auto">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="estiloVida form-check-input"
                             type="checkbox"
-                            id="mtTempoSentado"
+                            id="mt_tempo_sentado"
                           />
                           <label class="form-check-label" for="mtTempoSentado">
                             Passa muito tempo sentado(a)?
@@ -1179,9 +1156,9 @@
                             quais?</label
                           >
                           <input
-                            class="form-control form-control-lg"
-                            type="number"
-                            id="atividadeFisica"
+                            class="estiloVida form-control form-control-lg"
+                            type="text"
+                            id="atv_fis"
                           />
                         </div>
                       </div>
@@ -1191,9 +1168,9 @@
                             >Horas de sono</label
                           >
                           <input
-                            class="form-control form-control-lg"
+                            class="estiloVida form-control form-control-lg"
                             type="number"
-                            id="horasSono"
+                            id="horas_sono"
                           />
                         </div>
                       </div>
@@ -1203,7 +1180,7 @@
                       <div class="col-auto">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="estiloVida form-check-input"
                             type="checkbox"
                             id="fumante"
                           />
@@ -1218,9 +1195,9 @@
                             >Bebe álcool? Se sim, quanto?</label
                           >
                           <input
-                            class="form-control form-control-lg"
+                            class="estiloVida form-control form-control-lg"
                             type="text"
-                            id="alcool"
+                            id="bebe_alcool"
                           />
                         </div>
                       </div>
@@ -1233,7 +1210,7 @@
                             >Fez preenchimento? Se sim, onde?</label
                           >
                           <input
-                            class="form-control form-control-lg"
+                            class="estiloVida form-control form-control-lg"
                             type="text"
                             id="preenchimento"
                           />
@@ -1245,9 +1222,9 @@
                             >Faz tratamento médico? Se sim, quais?</label
                           >
                           <input
-                            class="form-control form-control-lg"
+                            class="estiloVida form-control form-control-lg"
                             type="text"
-                            id="tratamentoMedico"
+                            id="tratamento_med"
                           />
                         </div>
                       </div>
@@ -1261,7 +1238,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
                             id="gordura"
                           />
@@ -1273,7 +1250,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
                             id="doce"
                           />
@@ -1285,7 +1262,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
                             id="condimentada"
                           />
@@ -1297,7 +1274,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
                             id="verdura"
                           />
@@ -1309,7 +1286,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
                             id="dieta"
                           />
@@ -1324,7 +1301,7 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
                             id="fibra"
                           />
@@ -1336,9 +1313,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
-                            id="intestinoPreso"
+                            id="intestino_preso"
                           />
                           <label class="form-check-label" for="intestinoPreso">
                             Tem intestino preso?
@@ -1348,9 +1325,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
-                            id="poucaAgua"
+                            id="pouca_agua"
                           />
                           <label class="form-check-label" for="poucaAgua">
                             Pouca água
@@ -1360,9 +1337,9 @@
                       <div class="col">
                         <div class="form-check">
                           <input
-                            class="form-check-input"
+                            class="alimentacao form-check-input"
                             type="checkbox"
-                            id="poucaUrina"
+                            id="pouca_urina"
                           />
                           <label class="form-check-label" for="poucaUrina">
                             Pouca urina
